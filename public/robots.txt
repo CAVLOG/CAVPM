@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /inventory
+Disallow: /distribution
+Disallow: /entry
+Disallow: /reports
+Disallow: /settings
+Disallow: /api
+Disallow: /dashboard
+
+# Se o sistema for totalmente privado, use:
+# Disallow: /

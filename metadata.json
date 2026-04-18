@@ -1,0 +1,10 @@
+{
+  "name": "SISTEMADTICPRO",
+  "description": "Sistema robusto de controle de estoque e gestão de almoxarifado. Otimizado para hospedagem Locaweb com suporte a rotas SPA.",
+  "deployment": {
+    "platform": "Locaweb",
+    "webServer": "Apache",
+    "routerType": "BrowserRouter"
+  },
+  "requestFramePermissions": []
+}
