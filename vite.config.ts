@@ -1,16 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import { defineConfig, loadEnv } from 'vite';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: '/', // Ajustado para '/' para garantir carregamento de assets em sub-rotas
-  define: {
-    // Usamos o padrão VITE_ para variáveis de ambiente injetadas
-    'import.meta.env.VITE_BUILD_DATE': JSON.stringify(new Date().toLocaleString('pt-BR', { 
-      day: '2-digit', month: '2-digit', year: 'numeric', 
-      hour: '2-digit', minute: '2-digit'
-    })),
-    'import.meta.env.VITE_APP_VERSION': JSON.stringify(process.env.npm_package_version || '2.0.0')
-  }
-})
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, '.', '');
+  return {
+    // Voltando para o padrão '/' (absoluto) que é o esperado pela maioria dos servidores SPA
+    base: '/', 
+    plugins: [react(), tailwindcss()],
+    define: {
+      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 3000,
+    }
+  };
+});

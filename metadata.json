@@ -1,10 +1,6 @@
 {
-  "name": "SISTEMADTICPRO",
-  "description": "Sistema robusto de controle de estoque e gestão de almoxarifado. Otimizado para hospedagem Locaweb com suporte a rotas SPA.",
-  "deployment": {
-    "platform": "Locaweb",
-    "webServer": "Apache",
-    "routerType": "BrowserRouter"
-  },
-  "requestFramePermissions": []
+  "name": "SISTEMA CAVLOG",
+  "description": "Sistema Interno do COMANDO DE AVIAÇÃO JOÃO NEGRÃO - Seção Logística.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
